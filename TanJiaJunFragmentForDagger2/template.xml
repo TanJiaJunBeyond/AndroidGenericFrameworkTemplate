@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<template
+    format="8"
+    revision="8"
+    name="TanJiaJun Fragment For Dagger2"
+    minApi="9"
+    minBuildApi="26"
+    description="Creates a new fragment of Android Generic Framework For Dagger2.">
+
+    <category value="Fragment" />
+
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="packageName"
+        name="Package Name"
+        type="string"
+        constraints="package"
+        default="com.tanjiajun.androidgenericframework" />
+
+    <parameter
+        id="businessName"
+        name="Business Name"
+        type="string"
+        constraints="nonempty"
+        default="main" />
+
+    <parameter
+        id="objectKind"
+        name="Object Kind"
+        type="string"
+        constraints="nonempty"
+        default="TanJiaJun" />
+
+    <parameter
+        id="fragmentName"
+        name="Activity Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${extractLetters(objectKind)}Fragment"
+        default="TanJiaJunFragment"
+        help="The name of the fragment class to create." />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="fragment_${classToResource(fragmentName)}"
+        default="fragment_tan_jia_jun"
+        help="The name of the layout to create for the fragment." />
+
+    <parameter
+        id="viewModelName"
+        name="ViewModel Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${extractLetters(objectKind)}ViewModel"
+        default="TanJiaJunViewModel"
+        help="The name of the viewModel class to create." />
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_fragment.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+
+    <execute file="recipe.xml.ftl" />
+
+</template>

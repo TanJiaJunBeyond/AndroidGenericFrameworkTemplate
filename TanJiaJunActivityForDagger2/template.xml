@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<template
+    format="8"
+    revision="8"
+    name="TanJiaJun Activity For Dagger2"
+    minApi="9"
+    minBuildApi="26"
+    description="Creates a new activity of Android Generic Framework For Dagger2.">
+
+    <category value="Activity" />
+
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="packageName"
+        name="Package Name"
+        type="string"
+        constraints="package"
+        default="com.tanjiajun.androidgenericframework" />
+
+    <parameter
+        id="businessName"
+        name="Business Name"
+        type="string"
+        constraints="nonempty"
+        default="main" />
+
+    <parameter
+        id="objectKind"
+        name="Object Kind"
+        type="string"
+        constraints="nonempty"
+        default="TanJiaJun" />
+
+    <parameter
+        id="activityName"
+        name="Activity Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${extractLetters(objectKind)}Activity"
+        default="TanJiaJunActivity"
+        help="The name of the activity class to create." />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(activityName)}"
+        default="activity_tan_jia_jun"
+        help="The name of the layout to create for the activity." />
+
+    <parameter
+        id="viewModelName"
+        name="ViewModel Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${extractLetters(objectKind)}ViewModel"
+        default="TanJiaJunViewModel"
+        help="The name of the viewModel class to create." />
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+
+    <execute file="recipe.xml.ftl" />
+
+</template>
