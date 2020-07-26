@@ -20,8 +20,6 @@
 * **TanJiaJunFragmentForDagger2**：用于生成**Dagger2**版本的**Fragment对应的xml**、**Fragment**和**ViewModel**。
 * **TanJiaJunActivityForKoin**：用于生成**Koin**版本的**Activity对应的xml**、**Activity**和**ViewModel**。
 * **TanJiaJunFragmentForKoin**：用于生成**Koin**版本的**Fragment对应的xml**、**Fragment**和**ViewModel**。
-* **screenshot**：存放**文章截图**。
-* **LICENSE**：**软件许可证**。
 
 然后把**TanJiaJunActivityForDagger2**和**TanJiaJunActivityForKoin**放到**Activity模板目录**下，把**TanJiaJunActivityForKoin**和**TanJiaJunFragmentForKoin**放到**Fragment模板目录**下。
 
